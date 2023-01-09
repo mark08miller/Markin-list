@@ -1,6 +1,6 @@
 package org.example;
 
-public class ArrayIterator<E> implements Iterator<E> {
+public class ArrayIterator<E> implements Iterator<E>, java.util.Iterator<E> {
     private int index = 0;
     E[] values;
 
@@ -19,5 +19,10 @@ public class ArrayIterator<E> implements Iterator<E> {
     @Override
     public E next() {
         return values[index++];
+    }
+
+    @Override
+    public void remove() {
+        java.util.Iterator.super.remove();
     }
 }

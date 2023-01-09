@@ -1,8 +1,8 @@
 package org.example;
 
-public interface List<E> {
+public interface List<E> extends Iterable<E> {
     boolean add(E e);
-    void delete();
+    void delete(int index);
     E get(int index);
     int size();
     void update(int index, E e);
